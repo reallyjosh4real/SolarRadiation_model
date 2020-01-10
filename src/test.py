@@ -65,7 +65,7 @@ def get_top_avgs(dct):
 
 #calculate and returns least difference averages between measured and clearsky values in dictionary
 
-def get_least_diff_avgs(dict):
+def get_least_diff_avgs(dct):
     avg = []
     for key in dct:
         avg.append([key,dct[key].sum()/len(dct)])
@@ -117,6 +117,6 @@ def color_eval():
 if __name__ == "__main__":
     
     measured_DNI_dict, clearsky_DNI_dict, difference_DNI_dict  = readit()
-    top_producers = geoplot_top_producers(get_top_coords(get_top_avgs(measured_DNI_dict)))
-    least_differentials = geoplot_least_diff_toclearsky(get_top_coords(get_bottom_avgs(difference_DNI_dict)))
+    geoplot_top_producers(get_top_coords(get_top_avgs(measured_DNI_dict)))
+    geoplot_least_diff_toclearsky(get_top_coords(get_bottom_avgs(difference_DNI_dict)))
 
