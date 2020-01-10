@@ -15,7 +15,7 @@ import dateutil
 #returns dictionary with coordinates as keys and an array of measured values as values
 
 def readit():
-    path = r'/Users/ramozo_88/Capstone1/data'
+    path = r'/Users/ramozo_88/SolarRadiation_model/data'
     all_files = glob.glob(os.path.join(path, "*.csv"))
     measured_DNI_dict = {}
     clearsky_DNI_dict = {}
