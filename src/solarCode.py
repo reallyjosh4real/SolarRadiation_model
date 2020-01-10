@@ -90,7 +90,7 @@ def geoplot_all_points():
                         tiles="Cartodbpositron")
 
     for point in measured_DNI_dict.keys():
-        folium.Circle(location=[point[0], point[1]], radius=1200, color='yellow', fill_color='yellow').add_to(denver_map1)
+        folium.Circle(location=[point[0], point[1]], radius=1200, color='#fed976', fill_color='#fed976').add_to(denver_map1)
 
 def geoplot_top_producers(lst):
     denver_map2 = folium.Map(location=[39.75,-104.999338],
@@ -106,7 +106,7 @@ def geoplot_least_diff_toclearsky(lst):
                         tiles="Cartodbpositron")
 
     for point in lst:
-        folium.Circle(location=[point[0], point[1]], radius=1200, color='purple', fill_color='purple').add_to(denver_map3)
+        folium.Circle(location=[point[0], point[1]], radius=1200, color='#cc4c02', fill_color='#cc4c02).add_to(denver_map3)
 
 
 
