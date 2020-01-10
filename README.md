@@ -1,6 +1,6 @@
 # SolarRadiation_model
 <p align="center">
-    <img src="images/solar_panels.jpeg" />
+    <img src="images/solar_panels.jpeg" width=800/>
 <p/>
 
 ## Table of Context 
