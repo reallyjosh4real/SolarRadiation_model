@@ -54,24 +54,45 @@ def get_avgs(dct):
 def get_top_avgs(dct):
     return get_avgs(dct)[:40]
 
+def get_least_diff_avgs(dict):
+    avg = []
+    for key in dct:
+        avg.append([key,dct[key].sum()/len(dct)])
+    
+    avg = sorted(avg, key = lambda x:x[1])
+    
+    return avg
+
+def get_bottom_avgs(dct):
+    return get_least_diff_avgs(dct)[:40]
+
 def get_top_coords(lst):
     return [coord[0] for coord in lst]
 
 def geoplot_all_points():
-    denver_map = folium.Map(location=[39.75,-104.999338],
-                        zoom_start=10.5,
+    denver_map1 = folium.Map(location=[39.75,-104.999338],
+                        zoom_start=10,
                         tiles="Cartodbpositron")
 
     for point in measured_DNI_dict.keys():
-        folium.Circle(location=[point[0], point[1]], radius=1200, color='orange', fill_color='orange').add_to(denver_map)
+        folium.Circle(location=[point[0], point[1]], radius=1200, color='yellow', fill_color='yellow').add_to(denver_map1)
 
 def geoplot_top(lst):
-    denver_map = folium.Map(location=[39.75,-104.999338],
-                        zoom_start=10.5,
+    denver_map2 = folium.Map(location=[39.75,-104.999338],
+                        zoom_start=10,
                         tiles="Cartodbpositron")
 
     for point in lst:
-        folium.Circle(location=[point[0], point[1]], radius=1200, color='orange', fill_color='orange').add_to(denver_map)
+        folium.Circle(location=[point[0], point[1]], radius=1200, color='orange', fill_color='orange').add_to(denver_map2)
+
+def geoplot_least(lst):
+    denver_map3 = folium.Map(location=[39.75,-104.999338],
+                        zoom_start=10,
+                        tiles="Cartodbpositron")
+
+    for point in lst:
+        folium.Circle(location=[point[0], point[1]], radius=1200, color='purple', fill_color='purple').add_to(denver_map3)
+
 
 
 def color_eval():
@@ -82,4 +103,5 @@ if __name__ == "__main__":
     
     measured_DNI_dict, clearsky_DNI_dict, difference_DNI_dict  = readit()
     top_producers = geoplot_top(get_top_coords(get_top_avgs(measured_DNI_dict)))
-    least_differentials = geoplot_top(get_top_coords(get_top_avgs(difference_DNI_dict)))
+    least_differentials = geoplot_least(get_top_coords(get_bottom_avgs(difference_DNI_dict)))
+
