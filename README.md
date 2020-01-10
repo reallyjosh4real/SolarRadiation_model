@@ -47,4 +47,4 @@ Once I narrowed down my location to southeast Denver I continued my search to se
 <p>The most effective solar farming locations in Denver are southeast of the city. This is most likely because south is closer to the equator and east is a flatter elevation versus west.</p>
 
 ### Future Work
-<p>In the future I would like to plot values in the top 40 over time for the year of 2015 to get a better visualization of where in southeast Denver to plot a solar farm. 
+<p>In the future I would like to plot values in the top 40 in a time series for 2015 to get a better visualization of where in southeast Denver to plot a solar farm. 
