@@ -15,7 +15,7 @@ import dateutil
 #returns dictionary with coordinates as keys and an array of measured values as values
 
 def readit():
-    path = r'/Users/ramozo_88/SolarRadiation_model/data'
+    path = r'/Users/ramozo_88/Capstone1/data'
     all_files = glob.glob(os.path.join(path, "*.csv"))
     measured_DNI_dict = {}
     clearsky_DNI_dict = {}
@@ -106,7 +106,7 @@ def geoplot_least_diff_toclearsky(lst):
                         tiles="Cartodbpositron")
 
     for point in lst:
-        folium.Circle(location=[point[0], point[1]], radius=1200, color='#cc4c02', fill_color='#cc4c02).add_to(denver_map3)
+        folium.Circle(location=[point[0], point[1]], radius=1200, color='#cc4c02', fill_color='#cc4c02').add_to(denver_map3)
 
 
 
